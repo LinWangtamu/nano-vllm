@@ -83,7 +83,7 @@ class Sequence:
     # e.g. 300 tokens -> (300 + 255) // 256 = 2;  256 tokens -> 1;  257 tokens -> 2
     @property
     def num_blocks(self):
-        return (self.num_tokens + self.block_size - 1) // self.block_size
+        return (self.num_tokens + self.block_size - 1) // self.block_size  #celling integer
 
     # Tokens stored in the last block. e.g. 300 - (2 - 1) * 256 = 44;  256 tokens -> 256 (last block full)
     @property
